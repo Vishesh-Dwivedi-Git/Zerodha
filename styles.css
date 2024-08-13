@@ -1,6 +1,7 @@
+/* Base styles (mobile-first) */
 .navbar {
     margin: 0;
-    padding: 20px 100px; /* Reduced padding to prevent overflow */
+    padding: 10px 20px; /* Reduced padding for smaller screens */
     position: fixed; /* Keeps the navbar fixed at the top */
     top: 0;
     left: 0;
@@ -10,72 +11,185 @@
     box-shadow: 0px 4px 2px -2px whitesmoke;
     z-index: 1000;
     display: flex;
-    justify-content: space-between;
-    align-items: center; /* Centers items vertically within the navbar */
+    flex-direction: column; /* Stacks items vertically on small screens */
+    align-items: center;
     color: #0078d7;
-    font-size: 20px;
+    font-size: 16px;
     font-family: sans-serif;
     box-sizing: border-box; /* Ensures padding is included in the width calculation */
 }
-.icons {
+
+.navbar .icons {
     display: flex;
-    align-items: center; /* Vertically centers the icons */
+    justify-content: center; /* Centers icons horizontally */
+    margin-bottom: 10px;
 }
 
-.icon{
-    font-size:20px;
-    padding-left: 35px;
+.navbar .icon {
+    font-size: 18px; /* Smaller icon size on mobile */
+    padding-left: 15px;
     color: grey;
     text-decoration: none;
     cursor: pointer;
 }
+
 .mid1 {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center-align the content horizontally */
     font-family: sans-serif;
-  }
-  
-  .mid1 h1 {
-    margin-bottom: 20px; /* Space below the heading */
-    color: black;
-    font-size: 30px;
-  }
-  .mid1 p  {
-    color: #333333;
-    font-size: 20px;
-    margin-bottom: 40px;
-  }
-#mid{
-    height: 350px;
-    width: 700px;
+    padding: 10px; /* Add padding for smaller screens */
 }
-#sign{
+
+.mid1 h1 {
+    margin-bottom: 10px; /* Space below the heading */
+    color: black;
+    font-size: 24px; /* Smaller font size on mobile */
+}
+
+.mid1 p {
+    color: #333333;
+    font-size: 16px; /* Smaller font size on mobile */
+    margin-bottom: 20px;
+}
+
+#mid {
+    height: auto; /* Adjust height for smaller screens */
+    width: 100%; /* Full-width container */
+    max-width: 600px; /* Maximum width for larger screens */
+}
+
+#sign {
     color: white;
     background-color: #0078d7;
     font-family: sans-serif;
     border-radius: 3px;
-    width: 150px;
-    height:40px;
-    font-size: 20px;
+    width: 100%; /* Full width for smaller screens */
+    max-width: 150px; /* Maximum width for larger screens */
+    height: 40px;
+    font-size: 16px; /* Smaller font size on mobile */
     border-style: none;
-    margin-bottom: 40px;
+    margin-bottom: 20px; /* Reduce margin for smaller screens */
 }
-.mid2{
+
+.mid2 {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center-align content */
     font-family: sans-serif;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding: 0 20px; /* Add padding for smaller screens */
 }
-#eco{
-    height: 600px;
-    width: 600px;
+
+#eco {
+    height: auto; /* Adjust height for smaller screens */
+    width: 100%; /* Full-width container */
+    max-width: 500px; /* Maximum width for larger screens */
 }
-.press{
-    margin-top: 40px;
+
+.press {
+    margin-top: 20px; /* Reduce margin for smaller screens */
     text-align: center;
 }
-.head{
-    font-size: 25px;
+
+.head {
+    font-size: 20px; /* Smaller font size on mobile */
+}
+
+/* Media queries for larger screens */
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row; /* Align navbar items horizontally on larger screens */
+        padding: 20px 40px;
+        font-size: 18px;
+    }
+
+    .navbar .icon {
+        font-size: 20px;
+        padding-left: 25px;
+    }
+
+    .mid1 h1 {
+        font-size: 28px;
+    }
+
+    .mid1 p {
+        font-size: 18px;
+    }
+
+    #mid {
+        height: 350px;
+        width: 700px;
+    }
+
+    #sign {
+        width: 150px;
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+
+    .mid2 {
+        flex-direction: row; /* Align items horizontally on larger screens */
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+    #eco {
+        height: 600px;
+        width: 600px;
+    }
+
+    .press {
+        margin-top: 40px;
+    }
+
+    .head {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Styles for very large screens (e.g., desktops) */
+    .navbar {
+        padding: 20px 100px;
+        font-size: 20px;
+    }
+
+    .navbar .icon {
+        font-size: 22px;
+        padding-left: 35px;
+    }
+
+    .mid1 h1 {
+        font-size: 30px;
+    }
+
+    .mid1 p {
+        font-size: 20px;
+    }
+
+    #mid {
+        width: 700px;
+    }
+
+    #sign {
+        width: 150px;
+        font-size: 20px;
+    }
+
+    .mid2 {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+    #eco {
+        width: 600px;
+    }
+
+    .press {
+        margin-top: 40px;
+    }
+
+    .head {
+        font-size: 25px;
+    }
 }
